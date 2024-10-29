@@ -45,6 +45,7 @@ func main() {
 
 // SignIn 签到
 func SignIn(client *http.Client) bool {
+	log.Println("COOKIE:", CookieEnvVariable)
 	cookie := os.Getenv(CookieEnvVariable)
 	if cookie == "" {
 		log.Println("COOKIE不存在，请检查是否添加")
