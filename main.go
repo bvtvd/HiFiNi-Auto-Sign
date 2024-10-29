@@ -14,8 +14,8 @@ import (
 
 const (
 	SignInURL         = "https://www.hifini.com/sg_sign.htm"
-	CookieEnvVariable = "COOKIE"
-	DingDingWebhook   = "DINGDING_WEBHOOK"
+	CookieEnvVariable = os.Getenv("COOKIE")
+	DingDingWebhook   = os.Getenv("DINGDING_WEBHOOK")
 )
 
 type DingDingMessage struct {
