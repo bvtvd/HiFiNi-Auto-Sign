@@ -14,8 +14,8 @@ import (
 
 const (
 	SignInURL         = "https://www.hifini.com/sg_sign.htm"
-	CookieEnvVariable = os.Getenv("COOKIE")
-	DingDingWebhook   = os.Getenv("DINGDING_WEBHOOK")
+	CookieEnvVariable = "COOKIE"
+	DingDingWebhook   = "DINGDING_WEBHOOK"
 )
 
 type DingDingMessage struct {
@@ -45,8 +45,8 @@ func main() {
 
 // SignIn 签到
 func SignIn(client *http.Client) bool {
-	log.Println("COOKIE:", CookieEnvVariable)
 	cookie := os.Getenv(CookieEnvVariable)
+	log.Println("COOKIE:", cookie)
 	if cookie == "" {
 		log.Println("COOKIE不存在，请检查是否添加")
 		return false
